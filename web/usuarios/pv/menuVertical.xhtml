@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition>
+        <div class="left-side-bar">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo"/>
+                    <img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo"/>
+                </a>
+                <div class="close-sidebar" data-toggle="left-sidebar-close">
+                    <i class="ion-close-round"></i>
+                </div>
+            </div>
+            <div class="menu-block customscroll">
+                <div class="sidebar-menu">
+                    <ul id="accordion-menu">
+                        <li>
+                            <div class="sidebar-small-cap">${panel}</div>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <span class="micon dw dw-edit-2"></span><span class="mtext">Acciones</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="../mascotas/index.xhtml">Mascotas</a></li>
+                                <li><a href="../adopciones/index.xhtml">Adopciones</a></li>
+                                <li><a href="../categorias/index.xhtml">Categorias</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </ui:composition>
+</html>
+
