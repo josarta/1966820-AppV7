@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="d40239ac-7af5-46d6-adfe-793eedeefe80">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="178"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="usuarioReporte" class="java.lang.String"/>
+	<parameter name="ficha" class="java.lang.String"/>
+	<parameter name="rutaImagen" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     usuario.`nombres` AS usuario_nombres,
+     usuario.`apellidos` AS usuario_apellidos,
+     usuario.`tipoDocumento` AS usuario_tipoDocumento,
+     usuario.`documento` AS usuario_documento,
+     usuario.`correo` AS usuario_correo,
+     usuario.`clave` AS usuario_clave
+FROM
+     `usuario` usuario]]>
+	</queryString>
+	<field name="usuario_tipoDocumento" class="java.lang.String"/>
+	<field name="usuario_documento" class="java.lang.Long"/>
+	<field name="usuario_nombres" class="java.lang.String"/>
+	<field name="usuario_apellidos" class="java.lang.String"/>
+	<field name="usuario_correo" class="java.lang.String"/>
+	<background>
+		<band height="575" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666" uuid="cb6c4220-d121-40dc-9b9f-277a65969547"/>
+				<textField>
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="cff05c0c-a7b2-473f-9562-a0106f7d2a17"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="3e5f6419-e564-4edf-9c97-1a3a075120de"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF" uuid="4bddf063-7d45-4a0d-94f3-f9b495865999"/>
+				</line>
+			</frame>
+			<image>
+				<reportElement x="161" y="257" width="639" height="218" uuid="163e0195-be03-482e-882b-a62f7721cf2b"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\OneDrive\\Escritorio\\Encabezado.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="802" height="67" uuid="e66b2726-3ae3-413b-b046-b005a7124a42"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Lista Usuarios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="232" y="67" width="219" height="37" uuid="dfb0e4d0-cd04-4b14-a094-5e79e04e0450"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Generado por :]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="451" y="67" width="349" height="37" forecolor="#666666" backcolor="#FFFFFF" uuid="21d811cf-b334-42f1-bac0-f7236be0cbda"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="26" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{usuarioReporte}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666" uuid="aba33ad5-afde-4726-9397-582f86e49d4e"/>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="141" height="15" uuid="64ab711c-f2cf-4b2c-917a-7a9844e97f90"/>
+					<text><![CDATA[Tipo Documento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="141" y="0" width="141" height="15" uuid="a765c184-c880-4b9c-bfa4-b4b6ac774618"/>
+					<text><![CDATA[Documento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="282" y="0" width="141" height="15" uuid="567ec445-0c7b-487a-b819-f3ac8f853ded"/>
+					<text><![CDATA[Nombres]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="423" y="0" width="141" height="15" uuid="6e2640ea-16e1-402e-b7eb-d41431b59dc1"/>
+					<text><![CDATA[Apellidos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="564" y="0" width="141" height="15" uuid="3b363dec-b270-4894-ab3a-ba00c02c08fa"/>
+					<text><![CDATA[Correo]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement x="97" y="1" width="705" height="15" uuid="cd35b2d2-fc56-40f0-94e4-636a9a232beb"/>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="141" height="15" uuid="d01b7c91-42b8-4e77-8a45-d340a11a52b5"/>
+					<textFieldExpression><![CDATA[$F{usuario_tipoDocumento}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="141" y="0" width="141" height="15" uuid="64460936-a3bf-40d5-963c-c98e85863601"/>
+					<textFieldExpression><![CDATA[$F{usuario_documento}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="282" y="0" width="141" height="15" uuid="d966dd0b-90bf-47d7-ae81-867ee11aa06d"/>
+					<textFieldExpression><![CDATA[$F{usuario_nombres}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="423" y="0" width="141" height="15" uuid="f29e4c2a-236a-462d-a8c6-5f53c26918fd"/>
+					<textFieldExpression><![CDATA[$F{usuario_apellidos}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="564" y="0" width="141" height="15" uuid="e2abf259-ddc4-4223-ae73-f6d098a1ecab"/>
+					<textFieldExpression><![CDATA[$F{usuario_correo}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="97" y="16" width="705" height="1" uuid="6ce03bcd-9f37-47fe-9cda-a45251f2a550"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000" uuid="39b40e9f-6774-4422-983d-5332e21402f0"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="43" height="20" uuid="249975db-6d7d-4e10-82c8-1f38b8dc9d5f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Ficha :]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="139" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="ae25e30a-08d6-404c-8a0b-526e1971d654"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ficha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -5,8 +5,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
        
     <ui:composition template="../WEB-INF/template/tema.xhtml">
-        <ui:param name="nombreUsuario" value="Josarta"/>
-        <ui:param name="panel" value="Mascotas"/>
+        <ui:param name="nombreUsuario" value="#{usuarioSession.usuLogin.nombres} #{usuarioSession.usuLogin.apellidos}"/>
+        <ui:param name="panel" value="Mis Datos"/>
         
         <ui:define name="menuVertical">
             <ui:include src="pv/menuVertical.xhtml"></ui:include>
