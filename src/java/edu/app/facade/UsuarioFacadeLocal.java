@@ -29,6 +29,8 @@ public interface UsuarioFacadeLocal {
     List<Usuario> findRange(int[] range);
 
     int count();
-    
-       public Usuario loginUsuario(String correoIn, String claveIn);
+
+    public Usuario loginUsuario(String correoIn, String claveIn);
+
+    public Usuario recuperarClave(String correo);
 }

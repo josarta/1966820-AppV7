@@ -81,18 +81,20 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="input-group custom">
-                                    <h:inputText value="#{usuarioSession.correo}" class="form-control form-control-lg" html5:placeholder="Email"/>
+                                <div class="input-group custom" style="margin-bottom: 4px !important">
+                                    <h:inputText id="i-email" required="true" requiredMessage="must enter email" value="#{usuarioSession.correo}" class="form-control form-control-lg" html5:placeholder="Email"/>
                                         <div class="input-group-append custom">
                                             <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
-                                        </div>
+                                        </div>                                   
                                 </div>
-                                <div class="input-group custom">
-                                    <h:inputSecret  value="#{usuarioSession.clave}" class="form-control form-control-lg" html5:placeholder="***************"/>
+                                 <h:message for="i-email" style="color: red"></h:message>
+                                 <div class="input-group custom" style="margin-bottom: 4px !important">
+                                    <h:inputSecret id="i-ps" required="true" requiredMessage="must enter password" value="#{usuarioSession.clave}" class="form-control form-control-lg" html5:placeholder="***************"/>
                                         <div class="input-group-append custom">
                                             <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
-                                        </div>
+                                        </div>                                  
                                 </div>
+                                   <h:message for="i-ps" style="color: red"></h:message>
                                 <div class="row pb-30">
                                     <div class="col-6">
                                         <div class="custom-control custom-checkbox">
@@ -101,7 +103,7 @@
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="forgot-password"><a href="forgot-password.html">Forgot Password</a></div>
+                                        <div class="forgot-password"><a href="pu/forgot-password.xhtml">Forgot Password</a></div>
                                     </div>
                                 </div>
                                 <div class="row">

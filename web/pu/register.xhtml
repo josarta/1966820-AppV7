@@ -26,7 +26,7 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
 
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        
+
         <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 
         <script>
@@ -80,11 +80,12 @@
 
                                 <div class="form-wrap max-width-600 mx-auto">
 
+
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">Type of document*</label>
 
                                         <div class="col-sm-8">
-                                            <h:selectOneMenu value="#{registroRequest.usuReg.tipoDocumento}" class="form-control" >
+                                            <h:selectOneMenu value="#{registroRequest.usuReg.tipoDocumento}"  class="form-control" >
                                                 <f:selectItem itemLabel="Cedula" itemValue="Cedula"></f:selectItem>
                                                 <f:selectItem itemLabel="Cedula Ex." itemValue="Cedula Ex."></f:selectItem>
                                                 <f:selectItem itemLabel="T. Identidad" itemValue="T. Identidad"></f:selectItem>
@@ -97,7 +98,9 @@
                                         <label class="col-sm-4 col-form-label">Documet*</label>
 
                                         <div class="col-sm-8">
-                                            <h:inputText  class="form-control" value="#{registroRequest.usuReg.documento}" />
+                                            <h:inputText id="r-document"  class="form-control" required="true" requiredMessage="must enter documet" value="#{registroRequest.usuReg.documento}" />
+                                            <h:message style="color: red" for="r-document"></h:message>
+
                                         </div>
                                     </div>
 
@@ -105,7 +108,8 @@
                                         <label class="col-sm-4 col-form-label">Firts name*</label>
 
                                         <div class="col-sm-8">
-                                            <h:inputText  class="form-control" value="#{registroRequest.usuReg.nombres}" />
+                                            <h:inputText id="r-fn" class="form-control" required="true" requiredMessage="must enter firts name" value="#{registroRequest.usuReg.nombres}" />
+                                            <h:message style="color: red" for="r-fn"></h:message>
                                         </div>
                                     </div>
 
@@ -113,7 +117,8 @@
                                         <label class="col-sm-4 col-form-label">Last name*</label>
 
                                         <div class="col-sm-8">
-                                            <h:inputText  class="form-control" value="#{registroRequest.usuReg.apellidos}" />
+                                            <h:inputText id="r-ln" class="form-control" required="true" requiredMessage="must enter last name" value="#{registroRequest.usuReg.apellidos}" />
+                                            <h:message style="color: red" for="r-ln"></h:message>
                                         </div>
                                     </div>
 
@@ -121,7 +126,8 @@
                                         <label class="col-sm-4 col-form-label">Email*</label>
 
                                         <div class="col-sm-8">
-                                            <h:inputText  class="form-control" value="#{registroRequest.usuReg.correo}" />
+                                            <h:inputText id="r-email" class="form-control" required="true" requiredMessage="must enter email" value="#{registroRequest.usuReg.correo}" />
+                                            <h:message style="color: red" for="r-email"></h:message>
                                         </div>
                                     </div>
                                 </div>
@@ -133,7 +139,8 @@
                                         <label class="col-sm-4 col-form-label">Password*</label>
 
                                         <div class="col-sm-8">
-                                            <h:inputSecret  class="form-control" value="#{registroRequest.usuReg.clave}" />
+                                            <h:inputSecret id="r-ps" required="true" requiredMessage="must enter password" class="form-control" value="#{registroRequest.usuReg.clave}" />
+                                            <h:message style="color: red" for="r-ps"></h:message>
                                         </div>
                                     </div>
 

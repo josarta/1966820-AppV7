@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition>
+
+
+
+        <div class="min-height-200px">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="title">
+                            <h4>Profile</h4>
+                        </div>
+                        <nav aria-label="breadcrumb" role="navigation">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-30">
+                    <div class="card-box height-100-p overflow-hidden">
+                        <div class="profile-setting">
+                            <h:form>
+                                <div class="form-wrap max-width-600 mx-auto">
+
+
+                                    <div class="form-group row" style="margin-top: 20px" >
+                                        <label class="col-sm-4 col-form-label">Type of document</label>
+
+                                        <div class="col-sm-8">
+                                            <h:inputText value="#{usuarioSession.usuLogin.tipoDocumento}" disabled="true"  class="form-control"></h:inputText>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Documet</label>
+
+                                        <div class="col-sm-8">
+                                            <h:inputText id="r-document"  disabled="true" class="form-control"  value="#{usuarioSession.usuLogin.documento}" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Firts name*</label>
+
+                                        <div class="col-sm-8">
+                                            <h:inputText id="r-fn" class="form-control" required="true" requiredMessage="must enter firts name" value="#{usuarioSession.usuLogin.nombres}" />
+                                            <h:message style="color: red" for="r-fn"></h:message>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Last name*</label>
+
+                                        <div class="col-sm-8">
+                                            <h:inputText id="r-ln" class="form-control" required="true" requiredMessage="must enter last name" value="#{usuarioSession.usuLogin.apellidos}" />
+                                            <h:message style="color: red" for="r-ln"></h:message>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Email*</label>
+
+                                        <div class="col-sm-8">
+                                            <h:inputText id="r-email" class="form-control" disabled="true" value="#{usuarioSession.usuLogin.correo}" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Password*</label>
+
+                                        <div class="col-sm-8">
+                                            <h:inputSecret id="r-ps" required="true" requiredMessage="must enter password" class="form-control" value="#{usuarioSession.usuLogin.clave}" />
+                                            <h:message style="color: red" for="r-ps"></h:message>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="input-group mb-0" style="margin-bottom: 20px">
+                                        <h:commandButton action="#{usuarioSession.actualizaMisDatos()}" class="btn btn-primary btn-lg btn-block" value="Sign In"/>
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:composition>
+</html>
+

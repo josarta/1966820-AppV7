@@ -11,6 +11,7 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import org.primefaces.PrimeFaces;
 
 /**
@@ -41,7 +42,8 @@ public class UsuarioSession implements Serializable {
             if (usuLogin.getIdusuario() == null) {
                 mensaje = "swal('Usuario NO registrado !!!!', 'En el sistema', 'error');";
             } else {
-                mensaje = "swal('Usuario encontrado  !!!!', 'Correctamente', 'success');";
+                FacesContext fc = FacesContext.getCurrentInstance();
+                fc.getExternalContext().redirect("misdatos/index.xhtml");
             }
 
         } catch (Exception e) {
@@ -50,6 +52,22 @@ public class UsuarioSession implements Serializable {
         PrimeFaces.current().executeScript(mensaje);
 
     }
+    
+    
+     public void actualizaMisDatos() {
+        String mensaje = "";
+        try {
+            usuarioFacadeLocal.edit(usuLogin);
+            mensaje = "swal('Mis datos actualizados !!!!', 'Correctamente', 'success');";
+           
+        } catch (Exception e) {
+            mensaje = "swal('Mis datos NO se pudieron !!!!', 'Actualizar en el sistema', 'error');";
+        }
+        PrimeFaces.current().executeScript(mensaje);
+
+    }
+    
+    
 
     public String getCorreo() {
         return correo;

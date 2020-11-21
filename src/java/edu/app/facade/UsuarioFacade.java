@@ -28,21 +28,32 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
 
     public UsuarioFacade() {
         super(Usuario.class);
-    } 
-    
-    
-    public Usuario loginUsuario(String correo, String clave){
+    }
+
+    @Override
+    public Usuario loginUsuario(String correo, String clave) {
         try {
             Query qt = em.createQuery("SELECT u FROM Usuario u WHERE u.correo = :correo AND u.clave=:clave");
             qt.setParameter("correo", correo);
             qt.setParameter("clave", clave);
             return (Usuario) qt.getSingleResult();
-            
+
         } catch (Exception e) {
-        return  new Usuario();
+            return new Usuario();
         }
-    
+
     }
 
-    
+    @Override
+    public Usuario recuperarClave(String correo) {
+        try {
+            Query qt = em.createQuery("SELECT u FROM Usuario u WHERE u.correo = :correo");
+            qt.setParameter("correo", correo);
+            return (Usuario) qt.getSingleResult();
+        } catch (Exception e) {
+            return new Usuario();
+        }
+
+    }
+
 }
